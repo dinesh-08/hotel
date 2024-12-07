@@ -23,8 +23,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.hotel.dto.BookingDetailsDTO;
+import com.example.hotel.dto.BookingFromData;
 import com.example.hotel.model.BookingDetails;
 import com.example.hotel.model.BookingMember;
+import com.example.hotel.model.Feedback;
 import com.example.hotel.model.Invoice;
 import com.example.hotel.model.Member;
 import com.example.hotel.model.Room;
@@ -141,7 +144,7 @@ public class HotelStaffController {
     }
 
     @PostMapping("/walk-in-reservation")
-    public ResponseEntity<String> walkInReservation(@RequestBody BookingDetailsdto bookdto) {
+    public ResponseEntity<String> walkInReservation(@RequestBody BookingDetailsDTO bookdto) {
         try {
             // Save booking details to generate booking ID
             BookingDetails bookingDetails = new BookingDetails();
@@ -369,7 +372,7 @@ public class HotelStaffController {
     
     
     @PostMapping("/bookingDetails")
-    public ResponseEntity<String> createBooking( @RequestBody BookingFormData formData) {
+    public ResponseEntity<String> createBooking( @RequestBody BookingFromData formData) {
         // Fetch all rooms
     	
     	 BookingDetails bookingDetails1 = bookingDetailsRepository.findByBookingId(formData.getBooking_id());

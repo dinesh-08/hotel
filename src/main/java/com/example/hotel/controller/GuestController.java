@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.hotel.model.BookingDetails;
+import com.example.hotel.model.Feedback;
 import com.example.hotel.model.Room;
 import com.example.hotel.repository.BookingDetailsRepository;
 import com.example.hotel.service.BookingDetailsService;
